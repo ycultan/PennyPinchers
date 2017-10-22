@@ -46,8 +46,11 @@ class ViewController: UIViewController {
                 return
             }
             
-            let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any]
-            print(json)
+            if let string = String(data: data, encoding: .utf8){
+                print(string)
+            }
+            
+            
         }
         
         task.resume()
