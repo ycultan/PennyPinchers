@@ -46,9 +46,17 @@ class ViewController: UIViewController {
                 return
             }
             
-            if let string = String(data: data, encoding: .utf8){
-                print(string)
-            }
+            let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            print(json)
+            let offer = json!["offer"] as? [[String: Any]]
+            print(offer)
+            
+//            if let string = String(data: data, encoding: .utf8){
+//                let jsondata = [string]
+//                if let json = try? JSONSerialization.data(withJSONObject: jsondata, options: []) {
+//                    print(json)
+//                }
+//            }
             
             
         }
