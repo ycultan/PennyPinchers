@@ -243,6 +243,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="HdT-G6-QfO" id="kSR-EY-Joq"/>
+                                    <outlet property="prefetchDataSource" destination="HdT-G6-QfO" id="hMH-Xt-zIY"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWh-Dn-Fra">
@@ -290,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ely-Uz-9AR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607.2" y="118.29085457271366"/>
+            <point key="canvasLocation" x="1605.7971014492755" y="118.20652173913044"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kuS-6j-pWW">

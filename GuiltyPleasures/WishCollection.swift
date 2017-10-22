@@ -12,6 +12,7 @@ struct Item {
     var title: String?
     var desc: String?
     var barcode: String?
+    var url: String?
 }
 
 class WishCollection: UIViewController {
@@ -50,6 +51,7 @@ class WishCollection: UIViewController {
             let backToString = String(data: data, encoding: String.Encoding.utf8) as String!
             print("yomama", backToString)
             self.item.title = backToString
+            self.item.url = self.urlTextField.text!
             self.getCoupon()
         }
             
@@ -90,7 +92,10 @@ class WishCollection: UIViewController {
             print("item", self.item)
             self.items.append(self.item)
             print("items", self.items)
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.urlTextField.text = ""
+            }
             
         }
         
