@@ -66,8 +66,12 @@ class WishCollection: UIViewController {
         let request2 = NSMutableURLRequest(url: NSURL(string: "http://localhost:8000/loyalty") as! URL)
         request2.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let bodyString2 = "{\"accountNumber\": 1337 , \"sku\": \"item-1234\", \"totalPriceRequested\": 1}"
+        var itemIds = ["item-1234","item-1337"]
+        let index: Int = self.item.title!.count % itemIds.count
+        
+        let bodyString2 = "{\"accountNumber\": 1337 , \"sku\": \"\(itemIds[index])\", \"totalPriceRequested\": 1}"
         let bodyData2 = bodyString2.data(using: .utf8)
+        print(bodyString2)
         
         request2.httpMethod = "POST"
         request2.httpBody = bodyData2
