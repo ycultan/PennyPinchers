@@ -77,9 +77,10 @@ app.post('/amazon', function (req, resp) {
 	    	"content-type": "text/html"
 	    }
 	}, function (error, response, body){
-	    resp.send(response.body);
+	    // resp.send(response.body);
 	    let str = $(response.body).find('#productTitle').text().trim();
 	    console.log(str);
+	    resp.send(str);
 	});
 })
 
