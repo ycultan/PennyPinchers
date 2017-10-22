@@ -24,16 +24,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func apicall(_ sender: UIButton) {
-        
         let request = NSMutableURLRequest(url: NSURL(string: "https://syf2020.syfwebservices.com/v1_0/loyalty") as! URL)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+
         let bodyString = "{\"accountNumber\": 1337 , \"sku\": \"item-1234\", \"totalPriceRequested\": 1}"
         let bodyData = bodyString.data(using: .utf8)
-        
+
         request.httpMethod = "POST"
         request.httpBody = bodyData
-        
+
         print(NSString(data: request.httpBody!, encoding: String.Encoding.utf8.rawValue)!)
         print(request.allHTTPHeaderFields!)
         let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
@@ -45,22 +44,26 @@ class ViewController: UIViewController {
                 print("Data is empty")
                 return
             }
-            
-            let json = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-            print(json)
-            let offer = json!["offer"] as? [[String: Any]]
-            print(offer)
-            
+
+            let json = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+            print("json: ", json)
+            let offer = json!["offer"] as! NSDictionary
+//            print("offer", offer)
+            let desc = offer["description"]
+            print("desc", desc)
+
+
+
 //            if let string = String(data: data, encoding: .utf8){
 //                let jsondata = [string]
 //                if let json = try? JSONSerialization.data(withJSONObject: jsondata, options: []) {
 //                    print(json)
 //                }
 //            }
-            
-            
+
+
         }
-        
+
         task.resume()
         
     }

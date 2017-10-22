@@ -160,7 +160,7 @@
         <!--Wishlist-->
         <scene sceneID="rwV-uN-gCZ">
             <objects>
-                <viewController id="HdT-G6-QfO" sceneMemberID="viewController">
+                <viewController id="HdT-G6-QfO" customClass="WishCollection" customModule="GuiltyPleasures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Blv-xb-ooZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,6 +204,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfN-qp-xgQ">
                                 <rect key="frame" x="339" y="70" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addWishButtonPressed:" destination="HdT-G6-QfO" eventType="touchUpInside" id="LMb-qD-FoP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lT8-5L-IDZ">
                                 <rect key="frame" x="154" y="637" width="67" height="30"/>
@@ -231,6 +234,9 @@
                         <viewLayoutGuide key="safeArea" id="vec-DC-GLh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wishlist" id="nPY-VU-ZCg"/>
+                    <connections>
+                        <outlet property="urlTextField" destination="tm3-bb-K5N" id="buQ-EZ-sjI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ely-Uz-9AR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
