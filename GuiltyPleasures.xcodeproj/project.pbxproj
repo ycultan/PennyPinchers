@@ -16,6 +16,7 @@
 		8DB9820E1F9C5B2800B54C9B /* GuiltyPleasuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9820D1F9C5B2800B54C9B /* GuiltyPleasuresTests.swift */; };
 		8DB982191F9C5B2800B54C9B /* GuiltyPleasuresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB982181F9C5B2800B54C9B /* GuiltyPleasuresUITests.swift */; };
 		8DB982271F9CBE1800B54C9B /* WishCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB982261F9CBE1800B54C9B /* WishCollection.swift */; };
+		8DB9822B1F9CD9C600B54C9B /* CustomWishCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB9822A1F9CD9C600B54C9B /* CustomWishCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8DB982181F9C5B2800B54C9B /* GuiltyPleasuresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuiltyPleasuresUITests.swift; sourceTree = "<group>"; };
 		8DB9821A1F9C5B2800B54C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DB982261F9CBE1800B54C9B /* WishCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishCollection.swift; sourceTree = "<group>"; };
+		8DB9822A1F9CD9C600B54C9B /* CustomWishCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWishCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				8DB981F71F9C5B2800B54C9B /* ViewController.swift */,
 				8DB981F91F9C5B2800B54C9B /* Main.storyboard */,
 				8DB982261F9CBE1800B54C9B /* WishCollection.swift */,
+				8DB9822A1F9CD9C600B54C9B /* CustomWishCell.swift */,
 				8DB981FF1F9C5B2800B54C9B /* Assets.xcassets */,
 				8DB982011F9C5B2800B54C9B /* LaunchScreen.storyboard */,
 				8DB982041F9C5B2800B54C9B /* Info.plist */,
@@ -268,6 +271,7 @@
 				8DB981F81F9C5B2800B54C9B /* ViewController.swift in Sources */,
 				8DB981FE1F9C5B2800B54C9B /* GuiltyPleasures.xcdatamodeld in Sources */,
 				8DB982271F9CBE1800B54C9B /* WishCollection.swift in Sources */,
+				8DB9822B1F9CD9C600B54C9B /* CustomWishCell.swift in Sources */,
 				8DB981F61F9C5B2800B54C9B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
