@@ -10,14 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+    
     
     
     @IBAction func apicall(_ sender: UIButton) {
         
-        let request = NSMutableURLRequest(url: NSURL(string: "https://syf2020.syfwebservices.com/v1_0/next_purchase") as! URL)
+        let request = NSMutableURLRequest(url: NSURL(string: "https://syf2020.syfwebservices.com/v1_0/loyalty") as! URL)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let bodyString = "{\"accountNumber\": 1337 }"
+        let bodyString = "{\"accountNumber\": 1337 , \"sku\": \"item-1234\", \"totalPriceRequested\": 1}"
         let bodyData = bodyString.data(using: .utf8)
         
         request.httpMethod = "POST"
@@ -26,8 +37,6 @@ class ViewController: UIViewController {
         print(NSString(data: request.httpBody!, encoding: String.Encoding.utf8.rawValue)!)
         print(request.allHTTPHeaderFields!)
         let task = URLSession.shared.dataTask(with: request as URLRequest) { data, response, error in
-            print(data!)
-            print(response!)
             guard error == nil else {
                 print(error)
                 return
@@ -37,11 +46,8 @@ class ViewController: UIViewController {
                 return
             }
             
-            let json = try! JSONSerialization.jsonObject(with: data, options: [])
+            let json = try! JSONSerialization.jsonObject(with: data) as? [String: Any]
             print(json)
-            let jsonString = String(describing: json)
-            
-            print(jsonString)
         }
         
         task.resume()
